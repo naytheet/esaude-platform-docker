@@ -2,7 +2,7 @@
   "package": {
     "name": "esaude-app-platform",
     "repo": "apps",
-    "subject": "esaude"
+    "subject": "fswamp"
   },
   "version": {
     "name": "__RELEASE_VERSION__"

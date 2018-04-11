@@ -23,9 +23,7 @@ RUN apk --update add curl unzip fastjar; \
     sed -i "s/Fornecido Por/Fornecido Por eSaúde Plataforma v$RELEASE_VERSION e/g" /tmp/war_temp/WEB-INF/messages_pt.properties; \
     sed -i "s/Powered by/Powered by eSaúde Platform v$RELEASE_VERSION and/g" /tmp/war_temp/WEB-INF/messages_ru.properties; \
     sed -i "s/poweredBy=OpenMRS/poweredBy=eSaúde Platform v$RELEASE_VERSION සහ/g" /tmp/war_temp/WEB-INF/messages_si.properties; \
-    sed -i "s/技术OpenMRS/技术 eSaúde Platform v$RELEASE_VERSION 和 OpenMRS/g" /tmp/war_temp/WEB-INF/messages_zh_CN.properties;
-
-RUN grep -i poweredby /tmp/war_temp/WEB_INF/messages.properties; \
+    sed -i "s/技术OpenMRS/技术 eSaúde Platform v$RELEASE_VERSION 和 OpenMRS/g" /tmp/war_temp/WEB-INF/messages_zh_CN.properties; \
     cd /tmp/war_temp && jar cf /tmp/openmrs-patched.war .; \
     mv -f /tmp/openmrs-patched.war /usr/local/tomcat/webapps/openmrs.war; \
     rm -rf /tmp/war_temp;

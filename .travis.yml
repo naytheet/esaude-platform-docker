@@ -17,7 +17,7 @@ deploy:
     skip_cleanup: true
   - provider: bintray
     file: "bintray.json"
-    user: "naytheet"
+    user: "esaude-mh"
     key: $BINTRAY_API_KEY
     dry-run: false
     on:

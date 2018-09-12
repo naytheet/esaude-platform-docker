@@ -4,7 +4,7 @@
   "description": "eSaude EMR Platform App with Mental Health Additions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/naytheet/esaude-platform-docker.git"
+    "url": "git+https://github.com/esaude/esaude-platform-docker.git"
   },
   "scripts": {
     "create-version": "node scripts/create-version.js",
@@ -17,5 +17,5 @@
   ],
   "author": "Pascal Brandt <pascal@esaude.org> (http://esaude.org)",
   "license": "MPL-2.0",
-  "homepage": "https://github.com/naytheet/esaude-platform-docker#readme"
+  "homepage": "https://github.com/esaude/esaude-platform-docker#readme"
 }

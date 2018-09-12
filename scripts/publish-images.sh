@@ -1,24 +1,24 @@
 #!/bin/bash
 
 # Log in to the Bintray Docker registry
-docker login -u $BINTRAY_USER -p $BINTRAY_API_KEY naytheet-docker-platform-docker.bintray.io
+docker login -u $BINTRAY_USER -p $BINTRAY_API_KEY esaude-mh-docker-platform-docker.bintray.io
 
 set -o xtrace
 
 # Tag the tomcat image
-docker tag `docker images -q esaude_esaude-platform-tomcat` naytheet-docker-platform-docker.bintray.io/tomcat:$TRAVIS_TAG
+docker tag `docker images -q esaude_esaude-platform-tomcat` esaude-mh-docker-platform-docker.bintray.io/tomcat:$TRAVIS_TAG
 
 # Push the tomcat image
-docker push naytheet-docker-platform-docker.bintray.io/tomcat:$TRAVIS_TAG
+docker push esaude-mh-docker-platform-docker.bintray.io/tomcat:$TRAVIS_TAG
 
 # Tag the mysql image
-docker tag `docker images -q esaude_esaude-platform-mysql` naytheet-docker-platform-docker.bintray.io/mysql:$TRAVIS_TAG
+docker tag `docker images -q esaude_esaude-platform-mysql` esaude-mh-docker-platform-docker.bintray.io/mysql:$TRAVIS_TAG
 
 # Push the mysql image
-docker push naytheet-docker-platform-docker.bintray.io/mysql:$TRAVIS_TAG
+docker push esaude-mh-docker-platform-docker.bintray.io/mysql:$TRAVIS_TAG
 
 # Bundle app for offline install
-docker save -o esaude-app-platform.tar naytheet-docker-platform-docker.bintray.io/tomcat naytheet-docker-platform-docker.bintray.io/mysql
+docker save -o esaude-app-platform.tar esaude-mh-docker-platform-docker.bintray.io/tomcat esaude-mh-docker-platform-docker.bintray.io/mysql
 gzip esaude-app-platform.tar
 
 # Notify to slack

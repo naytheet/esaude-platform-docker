@@ -2,7 +2,7 @@
   "package": {
     "name": "esaude-app-platform",
     "repo": "apps",
-    "subject": "naytheet"
+    "subject": "esaude-mh"
   },
   "version": {
     "name": "__RELEASE_VERSION__"

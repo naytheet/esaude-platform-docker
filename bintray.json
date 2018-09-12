@@ -2,7 +2,7 @@
   "package": {
     "name": "esaude-app-platform",
     "repo": "apps",
-    "subject": "fswamp"
+    "subject": "naytheet"
   },
   "version": {
     "name": "__RELEASE_VERSION__"

@@ -9,10 +9,11 @@ ADD bahmnicore.properties /usr/local/tomcat/.OpenMRS/bahmnicore.properties
 ADD localtime /etc/localtime
 ADD logging.properties /usr/local/tomcat/conf/logging.properties
 ADD catalina.properties /usr/local/tomcat/conf/catalina.properties
+ADD server.xml /usr/local/tomcat/conf/server.xml
 
 RUN apk --update add curl unzip fastjar; \
     rm -rf /usr/local/tomcat/webapps/*; \
-    curl -k -L https://bintray.com/artifact/download/esaude/platform/1.2.0/openmrs.war \
+    curl -k -L https://bintray.com/artifact/download/naytheet/platform/1.4.5-MH/openmrs.war \
          -o /usr/local/tomcat/webapps/openmrs.war; \
     mkdir /tmp/war_temp && unzip -q /usr/local/tomcat/webapps/openmrs.war -d /tmp/war_temp; \
     sed -i "s/Powered by/Powered by eSaúde Platform v$RELEASE_VERSION and/g" /tmp/war_temp/WEB-INF/messages.properties; \
@@ -29,7 +30,7 @@ RUN apk --update add curl unzip fastjar; \
     rm -rf /tmp/war_temp;
 
 RUN mkdir -p /usr/local/tomcat/.OpenMRS/modules; \
-    curl -k -L https://bintray.com/artifact/download/esaude/platform/esaude-platform-modules-1.6.4.zip \
+    curl -k -L https://bintray.com/artifact/download/esaude/platform/esaude-platform-modules-1.6.10.zip \
          -o /tmp/esaude-emr-modules.zip; \
     unzip /tmp/esaude-emr-modules.zip -d /usr/local/tomcat/.OpenMRS/modules; \
     rm /tmp/esaude-emr-modules.zip; \

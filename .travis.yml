@@ -13,7 +13,7 @@ deploy:
   - provider: script
     script: scripts/publish-images.sh
     on:
-      tags: false
+      tags: true
     skip_cleanup: true
   - provider: bintray
     file: "bintray.json"
